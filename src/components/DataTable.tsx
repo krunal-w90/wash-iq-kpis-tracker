@@ -45,8 +45,8 @@ const DataTable: React.FC = () => {
         <table className="w-full border-collapse">
           <thead>
             {/* Region Header Row */}
-            <tr className="sticky top-0 z-40 bg-card border-b-2 border-border">
-              <th className="sticky left-0 z-50 min-w-52 w-52 px-4 py-3 text-left font-bold text-sm bg-card border-r-2 border-border text-foreground">
+            <tr className="sticky top-0 z-40 bg-card border-b border-border">
+              <th className="sticky left-0 z-50 min-w-52 w-52 px-4 py-3 text-left font-bold text-sm bg-card border-r border-border text-foreground">
                 September 2025 <br /><span className="text-muted-foreground text-xs font-normal">Updated as of 10/06/2025</span>
               </th>
               {Object.entries(sitesByRegion).map(([region, sites]) => (
@@ -65,8 +65,8 @@ const DataTable: React.FC = () => {
             </tr>
 
             {/* Site Header Row */}
-            <tr className="sticky top-14 z-40 bg-card border-b-2 border-border">
-              <th className="sticky left-0 z-50 min-w-52 w-52 line-clamp-1 truncate px-4 py-3 text-left font-semibold text-sm bg-white border-r-2 border-border">Sites</th>
+            <tr className="sticky top-14 z-40 bg-card border-b border-border">
+              <th className="sticky left-0 z-50 min-w-52 w-52 line-clamp-1 truncate px-4 py-3 text-left font-semibold text-sm bg-white border-r border-border">Sites</th>
               {tableData.sites
                 .map((site) => (
                   <th
@@ -80,7 +80,7 @@ const DataTable: React.FC = () => {
               <th className="sticky right-0 z-50">
                 <table>
                   <tr>
-                    <th className="px-4 py-3 text-center font-semibold text-xs bg-card border-l-2 border-border text-foreground min-w-24">TOTAL</th>
+                    <th className="px-4 py-3 text-center font-semibold text-xs bg-card border-l border-border text-foreground min-w-24">TOTAL</th>
                     <th className="px-4 py-3 text-center font-semibold text-xs bg-card border-l border-border text-foreground min-w-24">AVERAGE</th>
                   </tr>
                 </table>
@@ -98,7 +98,7 @@ const DataTable: React.FC = () => {
                   className={`border-b border-border group ${isCategory ? "bg-muted/50" : "bg-white"}`}
                 >
                   <td
-                    className={`sticky left-0 z-30 min-w-52 w-52 line-clamp-1 truncate px-4 py-3 font-medium text-sm border-r-2 border-border bg-white group-hover:bg-gray-100 ${isCategory ? "font-bold" : "pl-8 text-muted-foreground"
+                    className={`sticky left-0 z-30 min-w-52 w-52 line-clamp-1 truncate px-4 py-3 font-medium text-sm border-r border-border bg-white group-hover:bg-gray-100 ${isCategory ? "font-bold" : "pl-8 text-muted-foreground"
                       }`}
                   >
                     {metric.name}
@@ -135,7 +135,7 @@ const DataTable: React.FC = () => {
                     <table className="bg-transparent">
                       <tr>
                         {/* Total column */}
-                        <td className="px-3 py-3 text-center border-l-2 border-r border-border bg-transparent font-semibold text-sm min-w-24">
+                        <td className="px-3 py-3 text-center border-l border-r border-border bg-transparent font-semibold text-sm min-w-24">
                           {metric.data?.TOTAL
                             ? formatNumber(Number(metric.data.TOTAL.value), 2, metric.data.TOTAL.type)
                             : "-"}
