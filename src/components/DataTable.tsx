@@ -95,10 +95,10 @@ const DataTable: React.FC = () => {
               return (
                 <tr
                   key={`${metric.category}-${metricIdx}`}
-                  className={`border-b border-border ${isCategory ? "bg-muted/50" : "bg-white"}`}
+                  className={`border-b border-border group ${isCategory ? "bg-muted/50" : "bg-white"}`}
                 >
                   <td
-                    className={`sticky left-0 z-30 min-w-52 w-52 line-clamp-1 truncate px-4 py-3 font-medium text-sm border-r-2 border-border bg-white ${isCategory ? "font-bold" : "pl-8 text-muted-foreground"
+                    className={`sticky left-0 z-30 min-w-52 w-52 line-clamp-1 truncate px-4 py-3 font-medium text-sm border-r-2 border-border bg-white group-hover:bg-gray-100 ${isCategory ? "font-bold" : "pl-8 text-muted-foreground"
                       }`}
                   >
                     {metric.name}
@@ -120,11 +120,10 @@ const DataTable: React.FC = () => {
 
                       const colorClass = getColorForValue(cellData.value)
 
-
                       return (
                         <td
                           key={`${metric.name}-${site.name}`}
-                          className={`px-3 py-3 text-center border-r border-border font-medium text-sm min-w-24 ${colorClass}`}
+                          className={`px-3 py-3 text-center border-r border-border font-medium text-sm min-w-24 group-hover:bg-gray-100 ${colorClass}`}
                         >
                           {formatNumber(Number(cellData?.value), 2, cellData.type)}
                         </td>
@@ -132,18 +131,18 @@ const DataTable: React.FC = () => {
                     })}
 
 
-                  <td className="sticky right-0 z-30">
-                    <table>
+                  <td className="sticky right-0 z-30 bg-slate-200 group-hover:bg-gray-100">
+                    <table className="bg-transparent">
                       <tr>
                         {/* Total column */}
-                        <td className="px-3 py-3 text-center border-l-2 border-r border-border bg-muted font-semibold text-sm min-w-24">
+                        <td className="px-3 py-3 text-center border-l-2 border-r border-border bg-transparent font-semibold text-sm min-w-24">
                           {metric.data?.TOTAL
                             ? formatNumber(Number(metric.data.TOTAL.value), 2, metric.data.TOTAL.type)
                             : "-"}
                         </td>
 
                         {/* Average column */}
-                        <td className="px-3 py-3 text-center border-r border-border bg-muted font-semibold text-sm min-w-24">
+                        <td className="px-3 py-3 text-center border-r border-border bg-transparent font-semibold text-sm min-w-24">
                           {metric.data?.AVERAGE
                             ? formatNumber(Number(metric.data.AVERAGE.value), 2, metric.data.AVERAGE.type)
                             : "-"}

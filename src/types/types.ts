@@ -1,3 +1,7 @@
+export interface DateEnvelope {
+  start: string | null
+  end: string | null
+}
 export interface DataCell {
   value: string
   type?: "currency" | "percentage" | "number"
